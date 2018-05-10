@@ -1,6 +1,6 @@
 public class CodingHours {
     public static void main(String[] args) {
-        //FirstTry
+        //FirstTry_NotWorked...
         //int a = (17*5*6);
         //System.out.println(a);
         //System.out.println(52 / a * 100);
