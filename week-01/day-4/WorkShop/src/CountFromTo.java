@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CountFromTo {
     public static void main(String[] args) {
- 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please add zour first number here: ");
         int firstNumber = scanner.nextInt();
