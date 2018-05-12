@@ -30,13 +30,12 @@ public class PartyIndicator {
 
         if (noGirls) {
             System.out.println("Sausage party");
-        } else if (equals && greater) {
-            System.out.println("The party is excellent!");
         } else if (greater && oneToOne) {
             System.out.println("Quite cool party!");
-        } else (lessThan) {
+        } else if (lessThan) {
             System.out.println("Average party...");
+        } else {
+            System.out.println("The party is excellent!");
         }
-
     }
 }
