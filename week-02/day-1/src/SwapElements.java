@@ -5,11 +5,16 @@ public class SwapElements {
         // - Swap the first and the third element of `abc`
 
         String[] abc = {"first", "second", "third"};
-      
+        change(abc);
 
-        if (abc[0] == "first" && abc[2] == "third");
+        System.out.println(abc[0] + abc[2]);
+
+    }
+    public static void change (String abc[]){
+        for (int a = 0; a < abc.length; a++) {
+            if (abc[0] == "first" && abc[2] == "third") ;
             abc[0] = "abc";
             abc[2] = "abc";
-
-         }
+        }
     }
+}
