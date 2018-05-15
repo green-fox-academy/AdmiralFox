@@ -8,7 +8,7 @@ public class DrawTriangle {
                 if (b <= a) {
                     System.out.print("*");
                 } else {
-                    System.out.print("#");
+                    System.out.print(" ");
                 }
             }
             System.out.println();
