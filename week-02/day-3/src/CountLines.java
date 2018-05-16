@@ -13,7 +13,18 @@ public class CountLines {
     public static void main(String[] args) {
         String fileName = "my-file.txt";
         Path path = Paths.get(fileName);
+    }
+/*
+    public static Integer linesCount(String linesMyFile) {
+        for (int i = 0; i < linesMyFile.length(); i++) {
+            int number = linesMyFile.length();
+            System.out.println(number);
+            return number;
+        }
+*/
+    }
 
+        /*
         try {
             List<String> filePath = Files.readAllLines(path);
                 long lineCount = Files.lines(path).count();
@@ -21,6 +32,6 @@ public class CountLines {
             } catch (IOException e) {
             System.out.println("Can't open the file");
         }
+        */
 
-    }
-}
+
