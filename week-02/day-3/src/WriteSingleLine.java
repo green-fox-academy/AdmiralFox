@@ -13,7 +13,7 @@ public class WriteSingleLine {
         // If the program is unable to write the file,
         // then it should print an error message like: "Unable to write file: my-file.txt"
         List<String> content = new ArrayList<>();
-        content.add("Krisztian Sazlontai");
+        content.add("Krisztian Szalontai");
         try {
             Path filePath = Paths.get("new-file.txt");
             Files.write(filePath, content);
