@@ -15,10 +15,13 @@ public class CenterBoxFunction {
         int sizex = 10;
         int sizey = 10;
         centerSquare(sizex, sizey, graphics);
+       /*
+        This lines help me to centralized the boxes:
         graphics.setColor(Color.BLACK);
         graphics.drawRect(0,0,300,300);
         graphics.drawLine(0, 150, 300, 150);
         graphics.drawLine(150, 0, 150, 300);
+        */
     }
     public static void centerSquare ( int sizex, int sizey, Graphics graphics) {
         for (int i = 1; i < 4; i++) {
