@@ -19,7 +19,7 @@ public class GoToCenter {
 
     public static void lineDrawing(int x, int y, Graphics graphics) {
         for (int i = 1; i < 4; i++) {
-            graphics.drawLine(x * i, y, 150, 150);
+            graphics.drawLine(x * i, y , 150, 150);
         }
     }
     // Don't touch the code below
