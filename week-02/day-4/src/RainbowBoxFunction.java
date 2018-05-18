@@ -24,7 +24,7 @@ public class RainbowBoxFunction {
         */
     }
     public static void centerSquare ( int sizex, int sizey, Graphics graphics) {
-        for (int i = 4; i > 0; i--) {
+        for (int i = WIDTH; i > 0; i--) {
             Random random = new Random();
             graphics.setColor(new Color(random.nextInt(256),random.nextInt(256),random.nextInt(256)));
             graphics.fillRect(150 - (sizex * i / 2) , 150 - (sizey * i / 2), sizex * i , sizey * i);
