@@ -4,27 +4,25 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleStep {
+public class PurpleSteps3d {
     public static void mainDraw(Graphics graphics) {
         // Reproduce this:
-        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
-        int x = 10;
-        int y = 10;
-        squareDraw(x, y, graphics);
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
+        int x = 20;
+        int y = 20;
+        purpleSteps3dDraw(x, y, graphics);
 
 
     }
-    public static void squareDraw (int x, int y, Graphics graphics){
-        for (int i = 1; i < 19; i++) {
-            graphics.setColor(Color.MAGENTA);
-            graphics.fillRect(x * i,y *i,x,y);
+    public static void purpleSteps3dDraw (int x, int y, Graphics graphics) {
+        for (int i = 0; i <= 6; i++) {
+            graphics.fill3DRect(x* i, y*i, x * i, y * i, true);
         }
-
-
     }
+
     // Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 343;
+    static int WIDTH = 620;
+    static int HEIGHT = 643;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
