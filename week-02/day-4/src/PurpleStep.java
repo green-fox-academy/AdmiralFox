@@ -8,16 +8,15 @@ public class PurpleStep {
     public static void mainDraw(Graphics graphics) {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
-        int x = 10;
-        int y = 10;
-        squareDraw(x, y, graphics);
+        int size = 10;
+        squareDraw(size, graphics);
 
 
     }
-    public static void squareDraw (int x, int y, Graphics graphics){
+    public static void squareDraw (int size, Graphics graphics){
         for (int i = 1; i <= 19; i++) {
             graphics.setColor(new Color(166,102,234));
-            graphics.fillRect(x * i,y *i,x,y);
+            graphics.fillRect(size * i,size *i,size,size);
         }
 
 
