@@ -15,6 +15,9 @@ public class LinePlay {
         for (int i = 0; i < WIDTH; i += 20) {
             graphics.setColor(new Color(166,102,234));
             graphics.drawLine(20 + i, 5, WIDTH, 20 + i);
+            for (int j = 0; j < HEIGHT; j++)
+                graphics.setColor(Color.GREEN);
+                graphics.drawLine(5, 20 +i, 20 +i, HEIGHT);
         }
     }
 
