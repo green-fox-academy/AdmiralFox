@@ -6,15 +6,33 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
-        // Fill the canvas with a checkerboard pattern.
+
+        int BoxSize = 30;
+        drawBlackBox(BoxSize, graphics);
+        blackBoxTwo(BoxSize, graphics);
 
 
 
     }
+    public static void drawBlackBox (int boxSize, Graphics graphics) {
+        for (int i = 0; i <= 9; i += 2) {
+            graphics.fillRect(boxSize * i,  0, boxSize, boxSize);
+            for (int j = 2; j < 10; j += 2)
+                graphics.fillRect(boxSize * i, boxSize * j, boxSize, boxSize);
+        }
+    }
+
+    public static void blackBoxTwo (int boxSize, Graphics graphics) {
+        for (int i = 1; i <= 9; i += 2) {
+            graphics.fillRect(boxSize * i,boxSize,boxSize,boxSize);
+            for (int j = 3; j < 8; j += 2)
+                graphics.fillRect(boxSize * i,boxSize * j,boxSize,boxSize);
+        }
+    }
 
     // Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 343;
+    static int WIDTH = 300;
+    static int HEIGHT = 323;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
