@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
 
-        int BoxSize = 30;
+        int BoxSize = 60;
         drawBlackBox(BoxSize, graphics);
         blackBoxTwo(BoxSize, graphics);
 
@@ -15,10 +15,10 @@ public class Checkerboard {
 
     }
     public static void drawBlackBox (int boxSize, Graphics graphics) {
-        for (int i = 0; i <= 9; i += 2) {
-            graphics.fillRect(boxSize * i,  0, boxSize, boxSize);
-            for (int j = 2; j < 10; j += 2)
-                graphics.fillRect(boxSize * i, boxSize * j, boxSize, boxSize);
+             for (int i = 0; i <= 9; i += 2) {
+                 graphics.fillRect(boxSize * i,  0, boxSize, boxSize);
+             for (int j = 2; j < 10; j += 2)
+               graphics.fillRect(boxSize * i, boxSize * j, boxSize, boxSize);
         }
     }
 
@@ -31,8 +31,8 @@ public class Checkerboard {
     }
 
     // Don't touch the code below
-    static int WIDTH = 300;
-    static int HEIGHT = 323;
+    static int WIDTH = 600;
+    static int HEIGHT = 623;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
