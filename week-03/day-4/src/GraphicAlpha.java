@@ -1,8 +1,6 @@
 import javax.swing.*;
-
 import java.awt.*;
 
-import static java.awt.image.ImageObserver.WIDTH;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class GraphicAlpha {
@@ -15,32 +13,21 @@ public class GraphicAlpha {
 
         drawFourSquares(0, 0, WIDTH, graphics);
 
-
     }
     public static void drawFourSquares(int zerosStartX, int zerosStartY, int size, Graphics graphics) {
         int sizePerThree = size / 3;
         graphics.setColor(Color.BLACK);
-        graphics.drawRect(zerosStartX + sizePerThree, zerosStartY, sizePerThree, sizePerThree);
-        graphics.drawRect(zerosStartX, zerosStartY + sizePerThree, sizePerThree, sizePerThree);
-        graphics.drawRect(zerosStartX + sizePerThree, zerosStartY + sizePerThree * 2, sizePerThree, sizePerThree);
+        graphics.drawRect(zerosStartX + sizePerThree,zerosStartY, sizePerThree, sizePerThree);
+        graphics.drawRect(zerosStartX,zerosStartY + sizePerThree, sizePerThree, sizePerThree);
+        graphics.drawRect(zerosStartX + sizePerThree,zerosStartY + sizePerThree * 2, sizePerThree, sizePerThree);
         graphics.drawRect(zerosStartX + sizePerThree * 2, zerosStartY + sizePerThree, sizePerThree, sizePerThree);
         if (size > 1) {
             drawFourSquares(zerosStartX + sizePerThree, zerosStartY, sizePerThree, graphics);
             drawFourSquares(zerosStartY, zerosStartX + sizePerThree, sizePerThree, graphics);
-            drawFourSquares(zerosStartX + sizePerThree, zerosStartY + sizePerThree * 2, sizePerThree, graphics);
+            drawFourSquares(zerosStartX + sizePerThree,     zerosStartY + sizePerThree * 2, sizePerThree, graphics);
             drawFourSquares(zerosStartX + sizePerThree * 2, zerosStartY + sizePerThree, sizePerThree, graphics);
         }
     }
-
-
-//        graphics.drawRect(WIDTH/3 + WIDTH/9,        0 ,                 WIDTH/9,          WIDTH/9);
-//        graphics.drawRect(0,                        WIDTH/3 + WIDTH/9 , WIDTH/9,          WIDTH/9);
-//        graphics.drawRect(WIDTH/3 + WIDTH/9,        WIDTH/3 * 2,        WIDTH/9,          WIDTH/9);
-//        graphics.drawRect(WIDTH/3 * 2,              WIDTH/3 + WIDTH/9,  WIDTH/9,          WIDTH/9);
-
-
-
-
 
     //    Don't touch the code below
     static int WIDTH = 300;
