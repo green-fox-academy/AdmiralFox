@@ -7,11 +7,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Graphic {
 
     public static void mainDraw(Graphics graphics){
-        // create a square drawing function that takes 2 parameters:
-        // the x and y coordinates of the square's top left corner
-        // and draws a 50x50 square from that point.
-        // draw 3 squares with that function.
-        // avoid code duplication.
         int x = 100;
         int y = 100;
         fiftySquares(x, y, graphics);
@@ -19,11 +14,19 @@ public class Graphic {
     }
     public static void fiftySquares (int x, int y, Graphics graphics) {
             graphics.setColor(Color.BLACK);
-            graphics.drawRect(WIDTH/3 , 0 , x, y);
-            graphics.drawRect(0 , WIDTH/3 , x, y);
-            graphics.drawRect(WIDTH/3 , y * 2 , x, y);
-            graphics.drawRect(x * 2 , WIDTH/3 , x, y);
-    }
+            graphics.drawRect(WIDTH/3 , 0 , WIDTH/3, WIDTH);
+            graphics.drawRect(0 , WIDTH/3 , WIDTH, WIDTH/3);
+
+            graphics.drawRect( 133, 0 , 33, WIDTH/3);
+            graphics.drawRect(0 , 133 , WIDTH/3, 33);
+            graphics.drawRect( WIDTH/3, 33 , WIDTH/3, 33);
+            graphics.drawRect(33 , WIDTH/3 , 33, WIDTH/3);
+
+            graphics.drawRect( 144, 0 , 11, 33);
+            graphics.drawRect(0 , 144 , 33, 11);
+            graphics.drawRect( 133, 11 , 33, 11);
+            graphics.drawRect(11 , 133 , 11, 33);
+}
 
     //    Don't touch the code below
     static int WIDTH = 300;
