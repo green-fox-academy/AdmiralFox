@@ -4,8 +4,8 @@ import java.util.List;
 public class Cohort {
 
     public String name;
-    public List<Object> students;
-    public List<Object> mentors;
+    public List<Student> students;
+    public List<Mentor> mentors;
 
     public static void main(String[] args) {
 
