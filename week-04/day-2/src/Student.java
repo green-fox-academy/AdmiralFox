@@ -1,7 +1,7 @@
 public class Student extends Person {
 
-    private String previousOrganization;
-    private int skippedDays;
+    public String previousOrganization;
+    public int skippedDays;
 
 
 
