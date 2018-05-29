@@ -1,15 +1,15 @@
 public class Plant {
 
 
-    private int name;
+    private String name;
     private String color;
     private int waterLevel;
     private boolean needsOrNot;
 
-    public Plant() {
+    public Plant(String name, String color, int waterLevel, boolean needsOrNot ) {
+        this.name = name;
         this.color = color;
         this.waterLevel = waterLevel;
-        this.name = name;
         this.needsOrNot = needsOrNot;
     }
 
