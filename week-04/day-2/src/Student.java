@@ -17,9 +17,9 @@ public class Student extends Person {
                 this.skippedDays + " days from the course already." );
     }
 
-    public int skipDays(numberOfDays) {
-        
-    }
+//    public int skipDays(numberOfDays) {
+//
+//    }
 
     public Student(String name, int age, String gender, String previousOrganization) {
         super(name, age, gender);
