@@ -3,6 +3,7 @@ public class Main {
     Gnirts example = new Gnirts("this example");
 
     System.out.println(example.getExample());
+    System.out.println(example.charAt(2));
   }
 
 
