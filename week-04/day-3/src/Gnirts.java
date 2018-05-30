@@ -21,9 +21,7 @@ public class Gnirts implements CharSequence{
 
   @Override
   public char charAt(int index) {
-    for (char raw: example) {
-      return example.charAt(raw);
-    }
+    return example.charAt(index);
   }
 
   @Override
