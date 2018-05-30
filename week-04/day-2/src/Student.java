@@ -1,4 +1,5 @@
-public class Student extends Person {
+public class Student extends Person implements Cloneable {
+
 
     public String previousOrganization;
     public int skippedDays;
@@ -32,5 +33,10 @@ public class Student extends Person {
     public Student(String name, int age, String gender, String previousOrganization) {
         super(name, age, gender);
         this.skippedDays = 0;
+    }
+
+    @Override
+    public Student clone() {
+        return this;
     }
 }
