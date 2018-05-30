@@ -44,5 +44,7 @@ public class TestInput {
     awesome.addMentor(gandhi);
     awesome.info();
 
+    john.clone().introduce();
+
   }
 }
