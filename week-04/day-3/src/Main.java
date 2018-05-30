@@ -1,10 +1,13 @@
 public class Main {
   public static void main(String[] args) {
-    Gnirts example = new Gnirts("this example");
 
-    System.out.println(example.getExample());
-    System.out.println(example.charAt(2));
+    Gnirts g = new Gnirts("example");
+    System.out.println(g.charAt(1));
+// should print out: l
+
+    Shifter s = new Shifter("example", 2);
+    System.out.println(s.charAt(0));
+// should print out: a
+
   }
-
-
 }
