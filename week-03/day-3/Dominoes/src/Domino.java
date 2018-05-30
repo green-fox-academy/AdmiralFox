@@ -16,6 +16,17 @@ public class Domino implements Comparable{
 
     @Override
     public int compareTo(Object o) {
+        if (this.values[0] > ((Domino)o).values[0]) {
+            return 1;
+        } else if (this.values[0] < ((Domino)o).values[0]) {
+            return -1;
+        } else if (this.values[0] == ((Domino)o).values[0])  {
+            if (this.values[1] > ((Domino)o).values[1]){
+                return 1;
+            } else if (this.values[1] < ((Domino)o).values[1]) {
+                return -1;
+            }
+        }
         return 0;
     }
 }
