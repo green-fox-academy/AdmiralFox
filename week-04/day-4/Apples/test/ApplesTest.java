@@ -6,7 +6,7 @@ public class ApplesTest {
 
   @Test
   public void getAppleTest() {
-    String message = "apple";
+    String message = "appple";
     Apples apple = new Apples();
 
     assertEquals(message, apple.getApple());
