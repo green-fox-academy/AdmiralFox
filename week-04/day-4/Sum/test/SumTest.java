@@ -18,4 +18,34 @@ public class SumTest {
 
     assertEquals(expected, number.sumOfElements(numbers));
   }
+
+  @Test
+  public void emptyListAdded() {
+    Sum number = new Sum();
+    ArrayList<Integer> numbers = new ArrayList<>();
+
+    Integer expected = 0;
+
+    assertEquals(expected, number.sumOfElements(numbers));
+  }
+
+  @Test
+  public void listWithOneElement() {
+    Sum number = new Sum();
+    ArrayList<Integer> numbers = new ArrayList<>();
+    numbers.add(2);
+    Integer expected = 2;
+
+    assertEquals(expected, number.sumOfElements(numbers));
+  }
+
+  @Test
+  public void listWithZero() {
+    Sum number = new Sum();
+    ArrayList<Integer> numbers = new ArrayList<>();
+    numbers.add(0);
+    Integer expected = 0;
+
+    assertEquals(expected, number.sumOfElements(numbers));
+  }
 }
