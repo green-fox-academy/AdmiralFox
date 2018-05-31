@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Anagram {
-//  Write a function, that takes two strings and returns a boolean value based on if the two strings are Anagramms or not.
-//  Create a test for that.
+  //  Write a function, that takes two strings and returns a boolean value based on if the two strings are Anagramms or not.
+  //  Create a test for that.
   public static boolean isAnagram(String firstText, String secondText) {
     ArrayList<String> compareOne = new ArrayList<>(Arrays.asList(firstText.split("")));
     ArrayList<String> compareTwo = new ArrayList<>(Arrays.asList(secondText.split("")));
