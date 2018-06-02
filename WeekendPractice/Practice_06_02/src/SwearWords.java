@@ -1,6 +1,10 @@
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SwearWords {
 
@@ -13,10 +17,19 @@ public class SwearWords {
     System.out.println(familyFriendlizer("content.txt", offensiveWords)); // should print out 17
   }
 
-  private static int familyFriendlizer(String fileName, ArrayList<String> offensiveWords) {
-    Path filePath = Path.get(fileName);
-    
+  private static List<String> familyFriendlizer(String fileName, ArrayList<String> offensiveWords) {
+    Path filePath = Paths.get(fileName);
+    List<String> fileContent = new ArrayList<>();
+    offensiveWords = new ArrayList<>();
+
+    try {
+      fileContent = Files.readAllLines(filePath);
+      fileContent.removeAll(offensiveWords);
 
 
+    } catch (IOException exception) {
+      System.out.println("Unable to read file");
+    }
+    return fileContent;
   }
 }
