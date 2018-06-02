@@ -20,18 +20,25 @@ public class SymmetricMatrix {
 
     ArrayList<ArrayList<Integer>> symmetricMatrix = new ArrayList<ArrayList<Integer>>();
 
-    symmetricMatrix.add(new ArrayList<Integer> (Arrays.asList(1, 0, 1)));
-    symmetricMatrix.add(new ArrayList<Integer> (Arrays.asList(0, 2, 2)));
-    symmetricMatrix.add(new ArrayList<Integer> (Arrays.asList(1, 2, 5)));
+    symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(1, 0, 1)));
+    symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(0, 5, 2)));
+    symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(1, 2, 5)));
 
     System.out.println(isSymmetric(symmetricMatrix)); // should print out true
   }
 
   private static boolean isSymmetric(ArrayList<ArrayList<Integer>> symmetricMatrix) {
-    
-
-
-
-    return true;
+    for (int row = 0; row < symmetricMatrix.size(); row++) {
+      for (int col = 0; col < symmetricMatrix.size(); col++) {
+        if (symmetricMatrix.get(0).get(0).equals(symmetricMatrix.get(0).get(2))
+                && symmetricMatrix.get(0).get(0).equals(symmetricMatrix.get(2).get(0))
+                && symmetricMatrix.get(0).get(1).equals(symmetricMatrix.get(1).get(0))
+                && symmetricMatrix.get(1).get(1).equals(symmetricMatrix.get(1).get(2))
+                && symmetricMatrix.get(1).get(1).equals(symmetricMatrix.get(2).get(1))) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }
