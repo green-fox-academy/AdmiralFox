@@ -36,13 +36,13 @@ public class SwearWords {
   private static List<String> justPrint(String fileName, ArrayList<String> offensiveWords) {
     Path filePath = Paths.get(fileName);
     List<String> fileContent = new ArrayList<>();
+//    remowedWords =
 
     try {
       fileContent = Files.readAllLines(filePath);
       for (int i = 0; i < fileContent.size(); i++) {
         System.out.println(fileContent.get(i).split(" "));
       }
-      fileContent.removeAll(offensiveWords);
 
 
     } catch (IOException exception) {
