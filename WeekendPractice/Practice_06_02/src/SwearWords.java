@@ -13,44 +13,48 @@ public class SwearWords {
     // Create a function named familyFriendlizer that takes a filename and a list of strings as parameters
     // and remove all the given words from the file and returns the amount of the removed words.
 
-    ArrayList<String> offensiveWords = new ArrayList<>(Arrays.asList("fuck", "bloody", "cock", "shit", "fucker", "fuckstick", "asshole", "dick", "piss"));
-//    System.out.println(familyFriendlizer("content.txt", offensiveWords)); // should print out 17
-    System.out.println(justPrint("content.txt", offensiveWords));
+    ArrayList<String> offensiveWords = new ArrayList<> (Arrays.asList("fuck", "bloody", "cock", "shit", "fucker",
+            "fuckstick", "asshole", "dick", "piss"));
+    System.out.println(familyFriendlizer("content.txt", offensiveWords)); // should print out 17
   }
 
-//  private static int familyFriendlizer(String fileName, ArrayList<String> offensiveWords) {
-//    Path filePath = Paths.get(fileName);
-//    List<String> fileContent = new ArrayList<>();
-//
-//    try {
-//      fileContent = Files.readAllLines(filePath);
-//
-//
-//
-//    } catch (IOException exception) {
-//      System.out.println("Unable to read file");
-//    }
-//    return fileContent.size();
-//  }
-
-  private static List<String> justPrint(String fileName, ArrayList<String> offensiveWords) {
-    Path filePath = Paths.get(fileName);
-    List<String> fileContent = new ArrayList<>();
-//    remowedWords =
+  public static int familyFriendlizer(String filename, ArrayList<String > offensiveWords) {
+    int removed = 0;
+    List<String> contentLines = new ArrayList<>();
+    String[] contentWords;
+    String line = "";
+    Path filePath = Paths.get(filename);
 
     try {
-      fileContent = Files.readAllLines(filePath);
-      for (int i = 0; i < fileContent.size(); i++) {
-        System.out.println(fileContent.get(i).split(" "));
-      }
-
-
-    } catch (IOException exception) {
-      System.out.println("Unable to read file");
+      contentLines = Files.readAllLines(filePath);
+    } catch (IOException e) {
+      System.out.println("Can not read file!");
     }
-    return fileContent;
+
+    for (int i = 0; i < contentLines.size(); i++) {
+      contentWords = contentLines.get(i).split(" ");
+      for (int j = 0; j < contentWords.length; j++) {
+        for (int k = 0; k < offensiveWords.size(); k++) {
+          if (contentWords[j].toLowerCase().replace(",", "").replace(".", "")
+                  .equals(offensiveWords.get(k))) {
+            contentWords[j] = "";
+            removed++;
+          }
+        }
+        line = line + contentWords[j] + " ";
+      }
+      contentLines.remove(i);
+      contentLines.add(i, line);
+      line = "";
+    }
+
+    try {
+      Files.write(filePath, contentLines);
+    } catch (IOException e) {
+      System.out.println("Can not write file!");
+    }
+
+    return removed;
   }
 }
-
-
 
