@@ -9,6 +9,7 @@ public class StreamPractice02 {
 
     getEvens(numbers);
     getAverageOfOdd(numbers);
+    getEvensSquared(numbers);
 
   }
   private static void getEvens(ArrayList<Integer> numbers) {
@@ -22,5 +23,11 @@ public class StreamPractice02 {
             .mapToInt(n -> n)
             .average()
             .ifPresent(System.out::println);
+  }
+  private static void getEvensSquared(ArrayList<Integer> numbers) {
+    numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .map(n -> n * n)
+            .forEach(System.out::println);
   }
 }
