@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.toMap;
@@ -15,6 +16,7 @@ public class StreamPractice02 {
     String testString = "Cogito Ergo Sum";
     ArrayList<String> cities = new ArrayList<>(Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS"));
     ArrayList<Integer> numbersFrequency = new ArrayList<>(Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2));
+    Character[] charArray = new Character[] {'H', 'e', 'l', 'l', 'o'};
 
     getEvens(numbers);
     getAverageOfOdd(numbers);
@@ -24,6 +26,7 @@ public class StreamPractice02 {
     getSpecificCityNames(cities);
     getFrequencyOfCharacters(testString);
     getFrequencyOfNumbers(numbersFrequency);
+    getCharAndConvertToString(charArray);
 
   }
   private static void getEvens(ArrayList<Integer> numbers) {
@@ -80,12 +83,19 @@ public class StreamPractice02 {
     System.out.println(frequencies);
   }
   private static void getFrequencyOfNumbers(ArrayList<Integer> numbers) {
-    System.out.println("getFrequencyOfCharacters: ");
+    System.out.println("getFrequencyOfNumbers: ");
     Map <Integer, Integer> frequencies = numbers
             .stream()
             .collect(toMap(identity(),
                     value -> 1,
                     Integer::sum));
     System.out.println(frequencies);
+  }
+  private static void getCharAndConvertToString(Character[] charArray) {
+    System.out.println("getCharAndConvertToString: ");
+    Arrays.stream(charArray)
+            .map(c -> Character.toString(c))
+            .reduce((char1, char2) -> char1 + char2)
+            .ifPresent(System.out::println);
   }
 }
