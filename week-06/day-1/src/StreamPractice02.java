@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
+
+import static java.util.stream.Collectors.toMap;
 
 public class StreamPractice02 {
 
@@ -16,6 +19,7 @@ public class StreamPractice02 {
     getSquaredMoreThan20(numbers2);
     getUppercase(testString);
     getSpecificCityNames(cities);
+    getFrequencyOfCharacters(testString);
 
   }
   private static void getEvens(ArrayList<Integer> numbers) {
@@ -58,5 +62,14 @@ public class StreamPractice02 {
     testString.stream()
             .filter(s -> s.startsWith("A") && s.endsWith("I"))
             .forEach(System.out::println);
+  }
+  private static void getFrequencyOfCharacters(String testString) {
+    System.out.println("getFrequencyOfCharacters: ");
+    Map<Character, Integer> frequencies = testString.chars().boxed()
+            .collect(toMap(
+                    key -> Character.valueOf((char) key.intValue()),
+                    value -> 1,
+                    Integer::sum));
+    System.out.println(frequencies);
   }
 }
