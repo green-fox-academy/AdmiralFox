@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class StreamPractice02 {
 
@@ -9,12 +8,14 @@ public class StreamPractice02 {
     ArrayList<Integer> numbers = new ArrayList <>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
     ArrayList<Integer> numbers2 = new ArrayList<>(Arrays.asList(3, 9, 2, 8, 6, 5));
     String testString = "Cogito Ergo Sum";
+    ArrayList<String> cities = new ArrayList<>(Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS"));
 
     getEvens(numbers);
     getAverageOfOdd(numbers);
     getEvensSquared(numbers);
     getSquaredMoreThan20(numbers2);
     getUppercase(testString);
+    getSpecificCityNames(cities);
 
   }
   private static void getEvens(ArrayList<Integer> numbers) {
@@ -50,6 +51,12 @@ public class StreamPractice02 {
     testString.chars()
             .filter(Character::isUpperCase)
             .mapToObj(c -> Character.toString((char)c))
+            .forEach(System.out::println);
+  }
+  private static void getSpecificCityNames(ArrayList<String> testString) {
+    System.out.println("getSpecificCityNames: ");
+    testString.stream()
+            .filter(s -> s.startsWith("A") && s.endsWith("I"))
             .forEach(System.out::println);
   }
 }
