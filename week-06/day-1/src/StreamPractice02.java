@@ -65,7 +65,10 @@ public class StreamPractice02 {
   }
   private static void getFrequencyOfCharacters(String testString) {
     System.out.println("getFrequencyOfCharacters: ");
-    Map<Character, Integer> frequencies = testString.chars().boxed()
+    Map<Character, Integer> frequencies = testString
+            .toUpperCase()
+            .chars()
+            .boxed()
             .collect(toMap(
                     key -> Character.valueOf((char) key.intValue()),
                     value -> 1,
