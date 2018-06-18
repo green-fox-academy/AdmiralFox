@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.toMap;
@@ -20,7 +18,7 @@ public class StreamPractice02 {
 
     getEvens(numbers);
     getAverageOfOdd(numbers);
-    getEvensSquared(numbers);
+    getSquaredPositiveNumbers(numbers);
     getSquaredMoreThan20(numbers2);
     getUppercase(testString);
     getSpecificCityNames(cities);
@@ -43,10 +41,10 @@ public class StreamPractice02 {
             .average()
             .ifPresent(System.out::println);
   }
-  private static void getEvensSquared(ArrayList<Integer> numbers) {
+  private static void getSquaredPositiveNumbers(ArrayList<Integer> numbers) {
     System.out.println("getEvensSquared: ");
     numbers.stream()
-            .filter(n -> n % 2 == 0)
+            .filter(n -> n >= 0)
             .map(n -> n * n)
             .forEach(System.out::println);
   }
