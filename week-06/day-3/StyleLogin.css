@@ -1,0 +1,33 @@
+fieldset {
+    padding: 20px;
+    margin: 20px;
+    border: 0;
+    font-family: sans-serif;
+}
+label {
+    font-size: 12px;
+}
+p {
+    font-weight: bolder;
+}
+
+input[type="email"],
+input[type="password"] {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 10px 10px 50px;
+    border-radius: 4px;
+}
+input[type="password"] {
+    background: url('./visibleEye.png') no-repeat;
+    background-position: 200px 9px;
+}
+input[type="submit"] {
+    background: #222;
+    padding: 10px;
+    color: aliceblue;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 100px;
+    border: 0;
+}
