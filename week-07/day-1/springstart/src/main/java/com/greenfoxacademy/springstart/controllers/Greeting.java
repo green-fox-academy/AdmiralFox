@@ -1,12 +1,9 @@
-package controllers;
+package com.greenfoxacademy.springstart.controllers;
 
-import org.springframework.stereotype.Controller;
-
-@Controller
 public class Greeting {
 
-  long id;
-  String content;
+  private final long id;
+  private final String content;
 
   public Greeting(long id, String content) {
     this.id = id;
