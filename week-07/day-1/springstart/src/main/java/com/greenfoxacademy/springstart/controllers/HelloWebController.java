@@ -22,9 +22,8 @@ public class HelloWebController {
     model.addAttribute("name", name);
     model.addAttribute("counter", counter.incrementAndGet());
     model.addAttribute("hellos", iterateElements(hellos));
-    model.addAttribute("rgb1", randomNumber());
-    model.addAttribute("rgb2", randomNumber());
-    model.addAttribute("rgb3", randomNumber());
+    model.addAttribute("rgb", randomNumber());
+
     return "greeting";
   }
 
@@ -33,7 +32,7 @@ public class HelloWebController {
     return random;
   }
   public static int randomNumber() {
-    Integer random = new Random().nextInt(245);
+    Integer random = new Random().nextInt(255);
     return random;
   }
 }
