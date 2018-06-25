@@ -33,7 +33,7 @@ public class HelloWebController {
     return random;
   }
   public static int randomNumber() {
-    Integer random = new Random().nextInt(255);
+    Integer random = new Random().nextInt(245);
     return random;
   }
 }
