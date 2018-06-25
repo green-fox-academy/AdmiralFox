@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -23,11 +22,18 @@ public class HelloWebController {
     model.addAttribute("name", name);
     model.addAttribute("counter", counter.incrementAndGet());
     model.addAttribute("hellos", iterateElements(hellos));
+    model.addAttribute("rgb1", randomNumber());
+    model.addAttribute("rgb2", randomNumber());
+    model.addAttribute("rgb3", randomNumber());
     return "greeting";
   }
 
   public static String iterateElements(String[] elements) {
     String random = (elements[new Random().nextInt(elements.length)]);
+    return random;
+  }
+  public static int randomNumber() {
+    Integer random = new Random().nextInt(255);
     return random;
   }
 }
