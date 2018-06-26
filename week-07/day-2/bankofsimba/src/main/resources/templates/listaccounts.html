@@ -2,17 +2,25 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/StyleTable.css}"/>
     <title th:text="${name}" ></title>
 </head>
-<body>
 <h1>BANK OF SIMBA app</h1>
 <div th:if="${#lists.isEmpty(newBankAccount)}">
     <p>No bank accounts in the list</p>
 </div>
-<div th:unless="${#lists.isEmpty(newBankAccount)}" th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
-    <h2 th:text="'User name: ' + *{name}"/>
-    <h2 th:text="'User balance: ' + *{showBalance}"/>
-    <h2 th:text="'User type: ' + *{animalType}"/>
-</div>
-</body>
+    <table>
+        <tr id = blackTable>
+            <th> Account User Name :</th>
+            <th> User Balance:</th>
+            <th> User Type:</th>
+            <th> User Id:</th>
+        </tr>
+        <tr id = greyTable th:unless="${#lists.isEmpty(newBankAccount)}" th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
+            <td th:text="*{name}"/>
+            <td th:text="*{showBalance}"/>
+            <td th:text="*{animalType}"/>
+            <td th:text="${bankAccountStat.index}"/>
+        </tr>
+    </table>
 </html>
