@@ -13,7 +13,7 @@ public class BankAccount {
   public BankAccount(String name, double balance, String animalType) {
     this.name = name;
     this.balance = balance;
-    showBalance= String.format("%.2f", balance);
+    showBalance= String.format("%.2f Zebra", balance);
     this.animalType = animalType;
   }
 
