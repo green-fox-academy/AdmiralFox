@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${name}" ></title>
+</head>
+<body>
+<h1>BANK OF SIMBA app</h1>
+<div th:if="${#lists.isEmpty(newBankAccount)}">
+    <p>No bank accounts in the list</p>
+</div>
+<div th:unless="${#lists.isEmpty(newBankAccount)}" th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
+    <h2 th:text="'User name: ' + *{name}"/>
+    <h2 th:text="'User balance: ' + *{showBalance}"/>
+    <h2 th:text="'User type: ' + *{animalType}"/>
+</div>
+</body>
+</html>
