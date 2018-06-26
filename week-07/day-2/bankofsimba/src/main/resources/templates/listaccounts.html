@@ -15,12 +15,19 @@
             <th> User Balance:</th>
             <th> User Type:</th>
             <th> User Id:</th>
+            <th> User Rank:</th>
+            <th> User Good or Not:</th>
         </tr>
         <tr id = greyTable th:unless="${#lists.isEmpty(newBankAccount)}" th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
             <td th:text="*{name}"/>
             <td th:text="*{showBalance}"/>
             <td th:text="*{animalType}"/>
             <td th:text="${bankAccountStat.index}"/>
+            <td th:if="${bankAccount.king} == true">King</td>
+            <td th:unless="${bankAccount.king} == true">pleb</td>
+            <td th:if="${bankAccount.good} == true">Good Guy</td>
+            <td th:unless="${bankAccount.good} == true">Bad Guy</td>
+
         </tr>
     </table>
 </html>
