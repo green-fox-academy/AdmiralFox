@@ -8,10 +8,10 @@
 <body>
 <h1>Email validation</h1>
 <div th:if="${email} == true">
-    <p>This is a valid email address!</p>
+    <p style="color: green" th:text="'This '+ ${pathName} +'  is a valid email address!'"/>
 </div>
 <div th:unless="${email} == true">
-    <p>This is not a valid email address!!</p>
+    <p style="color: red" th:text="'This '+ ${pathName} +'  is not a valid email address!'"/>
 
 </div>
 
