@@ -18,7 +18,7 @@
             <th> User Rank:</th>
             <th> User Good or Not:</th>
         </tr>
-        <tr id = greyTable th:unless="${#lists.isEmpty(newBankAccount)}" th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
+        <tr id = greyTable th:unless="${#lists.isEmpty(newBankAccount)}"  th:each="bankAccount : ${newBankAccount}" th:object="${bankAccount}">
             <td th:text="*{name}"/>
             <td th:text="*{showBalance}"/>
             <td th:text="*{animalType}"/>
