@@ -18,10 +18,8 @@ public class MainController {
     return "login";
   }
 
-  @GetMapping("/{username}")
-  public String renderProfilePage(@PathVariable(value = "username") String username, Model model) {
-    return "";
-  }
-
-
+//  @GetMapping("login/{name}")
+//  public String renderProfilePage(@PathVariable(value = "name") String name, Model model) {
+//    return "";
+//  }
 }
