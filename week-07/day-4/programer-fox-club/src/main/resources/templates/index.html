@@ -13,9 +13,11 @@
         <p th:object="${fox}" th:text="'This is Mr ' +
         *{name} + ' Currently living on ' +
         *{foods} + ' and ' +
-        *{drinks} + '. He knows ' +
-        *{tricks} + ' tricks' "/>
-        <h1> Known triks</h1>
+        *{drinks} + '.'"/>
+        <p th:if="${fox.tricks.size() > 0} == true" th:text="' He knows '+ ${fox.tricks} + ' tricks.'"/>
+
+        <h1 > Known tricks</h1>
+        <p th:unless="${fox.tricks.size() > 0} == true" th:text="' '+ ${fox.name} + ' know no tricks, yet. Go and learn some.'"/>
         <ul>
             <li>Write HTML</li>
             <li>Code in Java</li>
