@@ -32,4 +32,16 @@ public class MainController {
     model.addAttribute("fox", foxService.getFox(username));
     return "index";
   }
+
+  @PostMapping("/nutritionstore/{username}")
+  public String redirectWithNewFood(@RequestParam(value = "Food") String username) {
+    foxService.login(username);
+    return "redirect:/nutritionstore/" + username;
+  }
+
+//  @GetMapping("/login/{username}")
+//  public String showProfilPage(@PathVariable(value = "username") String username, Model model) {
+//    model.addAttribute("fox", foxService.getFox(username));
+//    return "index";
+//  }
 }
