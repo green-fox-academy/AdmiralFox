@@ -10,11 +10,11 @@ public class Todo {
   public Todo() {
   }
 
-  public Todo(Long id, String title, boolean urgent, boolean done) {
+  public Todo(Long id, String title) {
     this.id = id;
     this.title = title;
-    this.urgent = false;
-    this.done = false;
+    urgent = false;
+    done = false;
   }
 
   public Long getId() {
