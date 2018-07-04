@@ -5,10 +5,7 @@ import com.greenfoxacademy.connectionwithmysql.services.TodoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -41,11 +38,12 @@ public class TodoController {
     todoRepository.save(todo);
     return "redirect:/todolist";
   }
-  @GetMapping("/delete")
-  public String deleteFromList(Model model, Todo todo) {
-   model.addAttribute("todo", todoServices.deleteTodo(todo.getId()));
-    return "delete";
+  @RequestMapping(value="/{id}/delete", method=RequestMethod.GET)
+  public String deleteTodo(@PathVariable(value="id") long id ) {
+    todoRepository.deleteById(id);
+    return "redirect:/todolist";
   }
+
   @PostMapping("/delete")
   public String deleteToDo(@ModelAttribute Todo todo){
     todoServices.addTodo(todo);
