@@ -1,4 +1,5 @@
 package com.greenfoxacademy.connectionwithmysql.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,26 +9,39 @@ import javax.persistence.Id;
 public class Todo {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private Long id;
   private String title;
   private boolean urgent;
   private boolean done;
 
-  public Todo() {
+
+
+  public Todo(Long id, String title, boolean urgent, boolean done) {
+    this.id = id;
+    this.title = title;
+    this.urgent = false;
+    this.done = false;
+  }
+  public Todo(String title, boolean urgent, boolean done){
+    this.title = title;
+    this.urgent = urgent;
+    this.done = done;
+  }
+  public Todo(String title){
+    this.title = title;
   }
 
-
-  public Todo(String title) {
-    this.title = title;
-    urgent = false;
-    done = false;
+  public Todo() {
   }
 
   public Long getId() {
     return id;
   }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public String getTitle() {
     return title;
