@@ -10,4 +10,6 @@ import java.util.List;
 public interface TodoRepository extends CrudRepository<Todo, Long> {
 
   List<Todo> findAll();
+  List<Todo> findAllByDone(boolean isDone);
+  List<Todo> findAllByTitleContaining(String title);
 }

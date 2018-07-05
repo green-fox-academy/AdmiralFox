@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @Controller
 public class TodoController {
 
@@ -21,12 +22,21 @@ public class TodoController {
     return "todo";
   }
 
-  @GetMapping(value = {"/todolist"})
-  public String list(Model model, @RequestParam(name = "isActive", required = false) String isActive){
-    model.addAttribute("istrue", isActive);
-    model.addAttribute("todos", todoRepository.findAll());
+  @GetMapping("/todolist")
+  public String list(@RequestParam(value = "isActive", required = false) boolean isActive, Model model,
+                     @RequestParam(value = "search", required = false) String search) {
+    if (isActive) {
+      model.addAttribute("todos", todoRepository.findAllByDone(false));
+    }
+    if(search != null) {
+      model.addAttribute("todos", todoRepository.findAllByTitleContaining(search));
+    }
+    else {
+      model.addAttribute("todos", todoRepository.findAll());
+    }
     return "todolist";
   }
+
   @GetMapping("/add")
   public String addToDoRender(Model model){
     model.addAttribute("newTodo", new Todo());
