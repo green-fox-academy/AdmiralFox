@@ -53,4 +53,9 @@ public class TodoController {
     todoRepository.deleteById(id);
     return "redirect:/todolist";
   }
+  @GetMapping("/{id}/addnewtodo")
+  public String editTodo(@PathVariable(value="id") long id, String title) {
+    todoServices.updateTodo(id, title);
+    return "redirect:/add";
+  }
 }

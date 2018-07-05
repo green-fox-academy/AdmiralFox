@@ -27,7 +27,8 @@ public class TodoServices {
     todoRepository.save(todo);
   }
 
-  public void updateTodo(Long id, Todo todo) {
+  public void updateTodo(Long id, String title) {
+    Todo todo = new Todo(title);
     todoRepository.save(todo);
 
   }
