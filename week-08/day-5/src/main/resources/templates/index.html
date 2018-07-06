@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
     </head>
     <body>
-        <a href="/submit">Submit new post!</a>
-        <h1>Trending Post</h1>
+        <header>
+            <a href="/submit">Submit new post!</a>
+            <h1>Trending Post</h1>
+            <div class="container">
+                <!--<h2>Search for Todos</h2>-->
+                <!--&lt;!&ndash;<form th:object="${todos}" th:action="@{/todolist}" method="get">&ndash;&gt;-->
+                    <!--<input type="text" name="search" id="search"/>-->
+                    <!--<input type="submit" value="Search"/>-->
+                </form>
+                <table border="1">
+                    <tr>
+                        <th>Vote Result</th>
+                        <th>Vote Up</th>
+                        <th>Vote Down</th>
+                        <th>Title</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr th:each= "post: ${posts}">
+                    <td><a th:href="${post.voteStatus}">Vote Up</a></td>
+                    <td><a th:href="${post.increment}">Vote Up</a></td>
+                    <td><a th:href="${post.decrement}">Vote Down</a></td>
+                        <td><a th:href="${post.url}"><p th:text="${post.urlTitle}"></p></a></td>
+                        <td><a th:href="${post.url}">Delete Post</a></td>
+                    </tr>
+                </table>
+            </div>
+        </header>
     </body>
 </html>

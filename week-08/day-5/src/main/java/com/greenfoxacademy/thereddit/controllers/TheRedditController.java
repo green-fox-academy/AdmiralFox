@@ -15,9 +15,11 @@ public class TheRedditController {
   TheRedditRepository theRedditRepository;
 
   @GetMapping("")
-  public String showIndexPage() {
+  public String showIndexPage(Model model) {
+    model.addAttribute("posts", theRedditRepository.findAll());
     return "index";
   }
+
 
   @GetMapping("/submit")
   public String addPostRender(Model model){

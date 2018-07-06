@@ -13,6 +13,8 @@ public class TheReddit {
   private long id;
   private String urlTitle;
   private String url;
+  private int voteStatus;
+
 
   public TheReddit() {
   }
@@ -20,6 +22,20 @@ public class TheReddit {
   public TheReddit(String urlTitle, String url) {
     this.urlTitle = urlTitle;
     this.url = url;
+  }
+
+  public TheReddit(String urlTitle, String url, int voteStatus) {
+    this.urlTitle = urlTitle;
+    this.url = url;
+    this.voteStatus = voteStatus;
+  }
+
+  public int getVoteStatus() {
+    return voteStatus;
+  }
+
+  public void setVoteStatus(int voteStatus) {
+    this.voteStatus = voteStatus;
   }
 
   public long getId() {
