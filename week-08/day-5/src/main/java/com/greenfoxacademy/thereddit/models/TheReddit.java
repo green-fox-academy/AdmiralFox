@@ -61,4 +61,11 @@ public class TheReddit {
   public void setUrl(String url) {
     this.url = url;
   }
+
+  public  void increment() {
+    voteStatus++;
+  }
+  public void decrement() {
+    voteStatus--;
+  }
 }

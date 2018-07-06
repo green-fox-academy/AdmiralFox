@@ -23,8 +23,8 @@
                         <th>Delete</th>
                     </tr>
                     <tr th:each= "post: ${posts}">
-                    <td><a th:href="${post.voteStatus}">Vote Up</a></td>
-                    <td><a th:href="${post.increment}">Vote Up</a></td>
+                    <td><p th:text="${post.voteStatus}"></p>/td>
+                    <td><a th:href="'/' + ${post.id} + '/editvote'">Vote Up</a></td>
                     <td><a th:href="${post.decrement}">Vote Down</a></td>
                         <td><a th:href="${post.url}"><p th:text="${post.urlTitle}"></p></a></td>
                         <td><a th:href="${post.url}">Delete Post</a></td>
