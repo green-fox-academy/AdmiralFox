@@ -35,16 +35,15 @@ public class TheRedditController {
     return "redirect:/";
   }
 
-  @GetMapping("/{id}/editvote")
-  public String editVotePage(@PathVariable(value="id") long id, Model model) {
-    model.addAttribute("todo", theRedditService.findPost(id));
-    return "index";
+  @GetMapping("/{id}/incrementvote")
+  public String incrmentVotePage(@PathVariable(value="id") long id, Model model) {
+    model.addAttribute("incrementPostVote", theRedditService.incrementId(id));
+    return "redirect:/";
   }
 
-  @PostMapping("/{id}/editvote")
-  public String editVote(@ModelAttribute TheReddit post) {
-    theRedditService.submitPost(post);
+  @GetMapping("/{id}/decrementvote")
+  public String decrementVotePage(@PathVariable(value="id") long id, Model model) {
+    model.addAttribute("decrementPostVote", theRedditService.incrementId(id));
     return "redirect:/index";
   }
-
 }

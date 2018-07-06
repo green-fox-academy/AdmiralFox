@@ -23,4 +23,7 @@ public class TheRedditService {
   public List<TheReddit> findAll() {
     return theRedditRepository.findAll();
   }
+  public int incrementId(Long id) {
+    return theRedditRepository.findById(id).get().getVoteStatus() + 1;
+  }
 }

@@ -14,7 +14,7 @@
                     <!--<input type="text" name="search" id="search"/>-->
                     <!--<input type="submit" value="Search"/>-->
                 </form>
-                <table border="1">
+                <table >
                     <tr>
                         <th>Vote Result</th>
                         <th>Vote Up</th>
@@ -23,9 +23,9 @@
                         <th>Delete</th>
                     </tr>
                     <tr th:each= "post: ${posts}">
-                    <td><p th:text="${post.voteStatus}"></p>/td>
-                    <td><a th:href="'/' + ${post.id} + '/editvote'">Vote Up</a></td>
-                    <td><a th:href="${post.decrement}">Vote Down</a></td>
+                    <td><p th:text="${post.voteStatus}"></p></td>
+                    <td><a th:href="'/' + ${post.id} + '/incrementvote'">Vote Up</a></td>
+                    <td><a th:href="'/' + ${post.id} + '/decrementvote'">Vote Down</a></td>
                         <td><a th:href="${post.url}"><p th:text="${post.urlTitle}"></p></a></td>
                         <td><a th:href="${post.url}">Delete Post</a></td>
                     </tr>
