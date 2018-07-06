@@ -11,13 +11,15 @@ public class TheReddit {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private String post;
+  private String urlTitle;
+  private String url;
 
   public TheReddit() {
   }
 
-  public TheReddit(String post) {
-    this.post = post;
+  public TheReddit(String urlTitle, String url) {
+    this.urlTitle = urlTitle;
+    this.url = url;
   }
 
   public long getId() {
@@ -28,11 +30,19 @@ public class TheReddit {
     this.id = id;
   }
 
-  public String getPost() {
-    return post;
+  public String getUrlTitle() {
+    return urlTitle;
   }
 
-  public void setPost(String post) {
-    this.post = post;
+  public void setUrlTitle(String urlTitle) {
+    this.urlTitle = urlTitle;
+  }
+
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
   }
 }
