@@ -1,9 +1,6 @@
 package com.example.frontend;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ConlorrelHandlerRest {
@@ -35,4 +32,12 @@ public class ConlorrelHandlerRest {
   AppendA appendA = new AppendA(appendable);
   return appendA;
   }
+  @PostMapping("/dountil/{what}")
+  public Messages doUntil(@PathVariable(value = "what") int until) {
+
+  }
+
+
+
+
 }
