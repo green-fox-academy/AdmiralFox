@@ -1,4 +1,6 @@
-package com.example.frontend;
+package com.example.frontend.models;
+
+import com.example.frontend.models.Messages;
 
 public class DoUntil implements Messages {
 

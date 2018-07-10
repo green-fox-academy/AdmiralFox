@@ -1,6 +1,6 @@
-package com.example.frontend;
+package com.example.frontend.models;
 
-public class AppendA implements Messages{
+public class AppendA implements Messages {
   private String appended;
 
   public AppendA() {

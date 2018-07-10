@@ -1,9 +1,14 @@
-package com.example.frontend;
+package com.example.frontend.controllers;
 
+import com.example.frontend.models.Doubling;
+import com.example.frontend.models.ErrorHandling;
+import com.example.frontend.models.AppendA;
+import com.example.frontend.models.Messages;
+import com.example.frontend.models.WelcomeMessage;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class ConlorrelHandlerRest {
+public class ControllerHandlerRest {
 
   @GetMapping("/doubling")
   public Messages doublingNumber(@RequestParam(value = "input", required = false) Integer input) {
@@ -34,10 +39,6 @@ public class ConlorrelHandlerRest {
   }
   @PostMapping("/dountil/{what}")
   public Messages doUntil(@PathVariable(value = "what") int until) {
-
+  return null;
   }
-
-
-
-
 }

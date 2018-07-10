@@ -1,6 +1,8 @@
-package com.example.frontend;
+package com.example.frontend.models;
 
-public class ErrorHandling implements Messages{
+import com.example.frontend.models.Messages;
+
+public class ErrorHandling implements Messages {
 
   private String error = "Please provide an input!";
 

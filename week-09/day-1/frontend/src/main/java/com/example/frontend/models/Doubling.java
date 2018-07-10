@@ -1,6 +1,8 @@
-package com.example.frontend;
+package com.example.frontend.models;
 
-public class Doubling implements Messages{
+import com.example.frontend.models.Messages;
+
+public class Doubling implements Messages {
 
   private Integer received;
   private Integer result;
