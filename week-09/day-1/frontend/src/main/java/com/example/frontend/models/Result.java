@@ -1,22 +1,22 @@
 package com.example.frontend.models;
 
-public class DoUntil implements Messages {
+public class Result implements Messages {
 
-  private int until;
+  private int result;
 
-  public DoUntil() {
+  public Result() {
   }
 
-  public DoUntil(int until) {
-    this.until = until;
+  public Result(int result) {
+    this.result = result;
   }
 
-  public int getUntil() {
-    return until;
+  public int getResult() {
+    return result;
   }
 
-  public void setUntil(int until) {
-    this.until = until;
+  public void setResult(int result) {
+    this.result = result;
   }
 
   private static int numberAdder(int limit) {
